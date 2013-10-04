@@ -1,6 +1,6 @@
-angular.module("yeomanApp", [ 'ngResource' ]);
+angular.module("yeomanApp", []);
 
-function MovieListCtrl($scope, $resource, $http) {
+function MovieListCtrl($scope, $http) {
 
 	$scope.search = function(movieToSearch) {
 
