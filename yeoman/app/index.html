@@ -18,9 +18,10 @@
 		<button ng-click="search(movieToSearch)">Search</button>
 
 		<h1>I have {{movies.length}} movies</h1>
-		<ul>
-			<li ng-repeat="movie in movies">{{movie}}</li>
-		</ul>
+		<div ng-repeat="movie in movies">
+			<label>Title : {{movie.Title}}</label>
+			<label>Year: {{movie.Year}}</label>
+		</div>
 	</div>
     <script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
