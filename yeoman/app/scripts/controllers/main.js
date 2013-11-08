@@ -1,10 +1,22 @@
 'use strict';
 
-angular.module('yeomanApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+
+yeomanApp.controller('MovieListCtrl',
+function MovieListCtrl($scope, $http) {
+
+	$scope.search = function(movieToSearch) {
+
+		$http.jsonp('http://www.omdbapi.com/',{
+			params : {
+				s : movieToSearch,
+				callback : 'JSON_CALLBACK'
+			}
+		}).success(function(data, status, headers, config) {
+			$scope.movies = data.Search;
+		}).error(function(data, status, headers, config) {
+			// called asynchronously if an error occurs
+			// or server returns response with an error status.
+			//alert(status);
+		});
+	};
+})

@@ -1,22 +1,22 @@
 'use strict';
 
-angular.module('yeomanApp', []);
-
-function MovieListCtrl($scope, $http) {
-
-	$scope.search = function(movieToSearch) {
-
+yeomanApp.controller('MovieController',
+	function MovieController($scope, $http,$routeParams) {
+	//alert('coucou');
+	var movieId = $routeParams.movieId;
 		$http.jsonp('http://www.omdbapi.com/',{
 			params : {
-				s : movieToSearch,
+				i : $routeParams.movieId,
 				callback : 'JSON_CALLBACK'
 			}
 		}).success(function(data, status, headers, config) {
-			$scope.movies = data.Search;
+			$scope.movie = data;
+			//alert(data);
 		}).error(function(data, status, headers, config) {
 			// called asynchronously if an error occurs
 			// or server returns response with an error status.
 			//alert(status);
 		});
-	};
-}
+});	
+	
+//	

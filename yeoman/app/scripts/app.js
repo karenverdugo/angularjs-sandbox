@@ -1,13 +1,15 @@
 'use strict';
 
-angular.module('yeomanApp', [])
+var yeomanApp = angular.module('yeomanApp', ['ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+     .when('/', {
+        templateUrl: 'index.html',
+        controller: 'MovieListCtrl'
       })
-      .otherwise({
-        redirectTo: '/'
+      .when('/movie/:movieId', {
+        templateUrl: 'views/movie.html',
+        controller: 'MovieController'
       });
+      
   });
