@@ -3,7 +3,7 @@
 
 yeomanApp.controller('MovieListCtrl',
 function MovieListCtrl($scope, $http) {
-
+	$scope.movies =[];
 	$scope.search = function(movieToSearch) {
 
 		$http.jsonp('http://www.omdbapi.com/',{
