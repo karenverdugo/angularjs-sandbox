@@ -1,6 +1,7 @@
 'use strict';
 
-yeomanApp.controller('MovieController', function MovieController($scope, $http,
+angular.module('yeomanApp')
+	.controller('MovieController', function MovieController($scope, $http,
 		$routeParams) {
 	var movieId = $routeParams.movieId;
 	$http.jsonp('http://www.omdbapi.com/', {

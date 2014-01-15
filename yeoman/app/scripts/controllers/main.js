@@ -1,11 +1,12 @@
 'use strict';
 
 
-yeomanApp.controller('MovieListCtrl',
+angular.module('yeomanApp')
+.controller('MovieListCtrl',
 function MovieListCtrl($scope, $http) {
 	$scope.movies =[];
+	$scope.movieToSearch='';
 	$scope.search = function(movieToSearch) {
-
 		$http.jsonp('http://www.omdbapi.com/',{
 			params : {
 				s : movieToSearch,
@@ -19,4 +20,4 @@ function MovieListCtrl($scope, $http) {
 			//alert(status);
 		});
 	};
-})
+});

@@ -7,5 +7,7 @@
 	<buildSpec>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.angularjs.core.angularnature</nature>
+		<nature>tern.eclipse.ide.core.ternnature</nature>
 	</natures>
 </projectDescription>
